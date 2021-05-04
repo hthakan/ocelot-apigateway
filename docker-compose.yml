@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  samplewebshop:
+    image: ${DOCKER_REGISTRY-}samplewebshop
+    build:
+      context: .
+      dockerfile: SampleWebShop/Dockerfile
