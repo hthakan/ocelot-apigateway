@@ -2,7 +2,7 @@
 HxFood
 
 ## Whats Including In This Repository
-We have implemented below **features over the run-aspnetcore-microservices repository**.
+We have implemented below **features over the  repository**.
 
 #### Catalog microservice which includes; 
 * ASP.NET Core Web API application 
