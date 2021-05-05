@@ -1,25 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace SampleWebShop.Pages
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace SampleWebShop
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ICatalogService _catalogService;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ICatalogService catalogService)
         {
-            _logger = logger;
+            _catalogService = catalogService ?? throw new ArgumentNullException(nameof(catalogService));
         }
 
-        public void OnGet()
-        {
+        public IEnumerable<CatalogModel> ProductList { get; set; } = new List<CatalogModel>();
 
+        public async Task<IActionResult> OnGetAsync()
+        {
+            ProductList = await _catalogService.GetCatalog();
+            return Page();
         }
     }
 }

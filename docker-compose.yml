@@ -1,8 +1,33 @@
 version: '3.4'
 
 services:
+  catalogdb:
+    image: mongo   
+
+  catalog.api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Catalog.API/Dockerfile
+
+  ocelotapigw:
+    image: ${DOCKER_REGISTRY-}ocelotapigw
+    build:
+      context: .
+      dockerfile: OcelotApiGw/Dockerfile  
+
   samplewebshop:
     image: ${DOCKER_REGISTRY-}samplewebshop
     build:
       context: .
       dockerfile: SampleWebShop/Dockerfile
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.9.2
+
+volumes:
+  mongo_data:
+  elasticsearch-data:
