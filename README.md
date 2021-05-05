@@ -14,8 +14,7 @@ We have implemented below **features over the run-aspnetcore-microservices repos
 #### API Gateway Ocelot Microservice
 * Implement **API Gateways with Ocelot**
 * Sample microservices/containers to reroute through the API Gateways
-* Run multiple different **API Gateway/BFF** container types	
-* The Gateway aggregation pattern in Shopping.Aggregator
+* Run multiple different **API Gateway/BFF** container types
 
 #### Development
 ```csharp
