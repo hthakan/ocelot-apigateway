@@ -1,4 +1,4 @@
-# Ocelot API Gateway - Implemenation .NetCore 5.0
+# Ocelot API Gateway - Implemenation .Net 5.0
 HxFood
 
 ## Whats Including In This Repository
